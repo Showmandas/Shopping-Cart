@@ -50,9 +50,9 @@
                       <!-- quantity part -->
                       <div class="col-6">
                             <ul class="pagination set_quantity">
-                              <li class="page-item"><button id="decrease" class="page-link"><i class="fa-solid fa-minus"></i></button></li>
-                              <li class="page-item"><input type="text" id="getInp" class="form-control" value="1"/></li>
-                              <li class="page-item"><button id="increase" class="page-link"><i class="fa-solid fa-plus"></i></button></li>
+                              <li class="page-item"><button id="decrease" class="page-link" onclick="decreaseQuantity('getInp')"><i class="fa-solid fa-minus"></i></button></li>
+                              <li class="page-item"><input type="text" id="getInp" class="form-control" value="0"/></li>
+                              <li class="page-item"><button id="increase" class="page-link" onclick="increaseQuantity('getInp')"><i class="fa-solid fa-plus"></i></button></li>
                             </ul>
                       </div><!--/col-6-->
                     </div>
@@ -102,9 +102,9 @@
                       <!-- quantity part -->
                       <div class="col-6">
                             <ul class="pagination set_quantity">
-                              <li class="page-item"><button id="decrease" class="page-link"><i class="fa-solid fa-minus"></i></button></li>
-                              <li class="page-item"><input type="text" id="getInp" class="form-control" value="1"/></li>
-                              <li class="page-item"><button id="increase" class="page-link"><i class="fa-solid fa-plus"></i></button></li>
+                              <li class="page-item"><button id="decrease" class="page-link" onclick="decreaseQuantity('getInp1')"><i class="fa-solid fa-minus"></i></button></li>
+                              <li class="page-item"><input type="text" id="getInp1" class="form-control" value="0"/></li>
+                              <li class="page-item"><button id="increase" class="page-link" onclick="increaseQuantity('getInp1')"><i class="fa-solid fa-plus"></i></button></li>
                             </ul>
                       </div><!--/col-6-->
                     </div>
@@ -138,7 +138,7 @@
                     </div><!--/price_calc-->
                     <div class="price_calc d-flex justify-content-between">
                         <p>vat</p>
-                        <p>$<span id="vat">5.00</span></p>
+                        <p>$<span id="vat">3.00</span></p>
                     </div><!--/price_calc-->
                     <hr/>
                     <div class="totalAmount d-flex fw-bold justify-content-between">
@@ -147,25 +147,6 @@
                     </div><!--/totalAmount-->
                     <button class="btn btn-info text-uppercase text-light fw-bold">Checkout</button>
                 </div><!--/right_side-->
-                <!-- discount part -->
-                <div class="discount_part">
-                    <div class="card">
-                        <div class="accordion" id="accordionExample">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Add a coupon code
-                                <span><i class="fas fa-chevron-down pt-1"></i></span>
-                            </button>
-                            <div  id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body mt-3">
-                                    <input type="text" id="coupon_code" class="form-control fw-bold" placeholder="Enter Coupon code">
-                                    <span id="error-msg" class="text-dark mt-3"></span>
-                                </div><!--/mt-3-->
-                                <button class="btn btn-primary mt-3 btn-sm" id="couponBtn">Get Discount</button>
-
-                            </div><!--/collapse-->
-                        </div><!--/card-body-->
-                    </div><!--/card-->
-                </div><!--/discount_part-->
 
             </div><!--/col-lg-4-->
           </div>
