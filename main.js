@@ -1,49 +1,45 @@
+const productCard=document.getElementById('productCard');
 
-let showPrice=document.getElementById('showPrice');
-let vat=document.getElementById('vat').innerText;
-let total=document.getElementById('total');
+products.forEach(product=>{
+    console.log(product);
+    const{id,name,price,instock,imgSrc}=product;
+    productCard.innerHTML+=`
+    <div class="col-lg-4 h-100">
+    <div class="card mb-5 my-5">
+  <img src="${imgSrc}" class="img-fluid" id="productImg" alt="...">
+  <div class="card-body">
+    <h4 class="card-title">${name}</h4>
+    <h5 class="card-text">Price: ${price}</h5>
+    <h5 class="card-text">Instock: ${instock}</h5>
+    <div class="d-flex justify-content-center align-items-center gap-3">
+    <button class="btn bg-info-subtle">Know more</button>
+    <button class="btn bg-warning-subtle" onclick="addCart(${id})">Add to cart</button>
+    </div>
+  </div>
+</div>
+    </div>
+    `
+})
 
 
-
-function decreaseQuantity(incrDecr){
-    let getInp=document.getElementById(incrDecr);
-    let inpVal=parseInt(getInp.value);
-    if(getInp.value <=0){
-        alert('Invalid quantity');
+let cartItems=[];
+updataCart();
+const addCart=(dataId)=>{
+    // console.log(datas);
+    if(cartItems.some(item=>item.id ===dataId)){
+        alert('Product Already added!');
     }else{
-        getInp.value=inpVal-1;
-        let getVal=getInp.value;
-        let result=getVal * 10;
-        showPrice.innerText=result;
-        getInp.style.backgroundColor='#fff';
-        getInp.style.Color='#000';
+        const item=products.find(product=>product.id===dataId)
+        cartItems.push(
+            ...item
+        )
     }
-
+ updataCart();
 }
 
-function increaseQuantity(incrDecr){
-    let getInp=document.getElementById(incrDecr);
-    let inpVal=parseInt(getInp.value);
-    // console.log(inpVal);
-    if(getInp.value >=10){
-        alert('Maximum 10 quantity is allowed!');
-        getInp.style.backgroundColor='red';
-        getInp.style.Color='#fff';
-    }else{
-        getInp.value=inpVal+1;
-    // document.getElementById('getInp').innerHTML=Number(getInp.value)+1;
-    let getVal=getInp.value;
-    let result=getVal * 10;
-    showPrice.innerText=result;
-    let resultVal=parseFloat(result);
-    // console.log(resultVal);
-    let vatVal=parseFloat(vat);
-    // console.log(typeof(vatVal));
-    let totalResult=resultVal + vatVal;
-    // console.log(totalResult);
-    total.innerText=totalResult;
-
-    }
+// cart update 
+const updateCart=()=>{
+    displayCartItem();
 }
 
-
+// display cart item to cart section 

@@ -15,146 +15,21 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-10 col-11 mx-auto">
-          <div class="row mt-5 gx-3">
-            <!-- left side -->
-            <div
-              class="col-md-12 col-11 col-lg-8 mx-auto cart mb-lg-0 mb-5 shadow"
-            >
-              <div class="card p-4">
-                <h2 class="py-4 fw-bold">Cart Items</h2>
-                <div class="row">
-                  <div
-                    class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow singa_img"
-                  >
-                    <img
-                      src="images/singara.jpg"
-                      alt="singara"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <!--/col-11-->
-                  <!-- product details -->
-                  <div class="col-md-7 col-11 mx-auto px-4 mt-2">
-                    <div class="row">
-                      <!-- Name of product -->
-                      <div class="col-6 card-title">
-                        <h1 class="mb-4 product_name">Singara</h1>
-                        <p class="mb-2">Plain flour/Maida 2 cups</p>
-                        <p class="mb-2">Salt 1/2 tsp</p>
-                        <p class="mb-2">Cooking oil 5 tbsp</p>
-                        <p class="mb-3">Coldwater 1/2 cup</p>
-                      </div>
-                      <!--/card-title-->
-                      <!-- quantity part -->
-                      <div class="col-6">
-                            <ul class="pagination set_quantity">
-                              <li class="page-item"><button id="decrease" class="page-link" onclick="decreaseQuantity('getInp')"><i class="fa-solid fa-minus"></i></button></li>
-                              <li class="page-item"><input type="text" id="getInp" class="form-control" value="0"/></li>
-                              <li class="page-item"><button id="increase" class="page-link" onclick="increaseQuantity('getInp')"><i class="fa-solid fa-plus"></i></button></li>
-                            </ul>
-                      </div><!--/col-6-->
-                    </div>
-                    <!--/row-->
-                    <!-- remove item -->
-                    <div class="row">
-                        <div class="col-8 d-flex justify-content-between remove_item">
-                            <p><i class="fas fa-trash-alt"></i>Remove item</p>
-                            <p><i class="fas fa-heart"></i>React</p>
-                        </div><!--/remove_item-->
-                        <div class="col-4 d-flex justify-content-end price">
-                            <h3>$<span id="itemValue">0.00</span></h3>
-
-                        </div><!--/col-4-->
-                    </div><!--/row-->
-                  </div>
-                  <!--/col-md-7-->
-                </div>
-                <!--/row-->
-              </div>
-              <!--/card-->
-              <!-- 2nd cart item -->
-              <div class="card p-4">
-                <div class="row">
-                  <div
-                    class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow singa_img"
-                  >
-                    <img
-                      src="images/somucha.jpg"
-                      alt="singara"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <!--/col-11-->
-                  <!-- product details -->
-                  <div class="col-md-7 col-11 mx-auto px-4 mt-2">
-                    <div class="row">
-                      <!-- Name of product -->
-                      <div class="col-6 card-title">
-                        <h1 class="mb-4 product_name">Samosa</h1>
-                        <p class="mb-2">Plain flour/Maida 2 cups</p>
-                        <p class="mb-2">Salt 1/2 tsp</p>
-                        <p class="mb-2">Cooking oil 5 tbsp</p>
-                        <p class="mb-3">Coldwater 1/2 cup</p>
-                      </div>
-                      <!--/card-title-->
-                      <!-- quantity part -->
-                      <div class="col-6">
-                            <ul class="pagination set_quantity">
-                              <li class="page-item"><button id="decrease" class="page-link" onclick="decreaseQuantity('getInp1')"><i class="fa-solid fa-minus"></i></button></li>
-                              <li class="page-item"><input type="text" id="getInp1" class="form-control" value="0"/></li>
-                              <li class="page-item"><button id="increase" class="page-link" onclick="increaseQuantity('getInp1')"><i class="fa-solid fa-plus"></i></button></li>
-                            </ul>
-                      </div><!--/col-6-->
-                    </div>
-                    <!--/row-->
-                    <!-- remove item -->
-                    <div class="row">
-                        <div class="col-8 d-flex justify-content-between remove_item">
-                            <p><i class="fas fa-trash-alt"></i>Remove item</p>
-                            <p><i class="fas fa-heart"></i>React</p>
-                        </div><!--/remove_item-->
-                        <div class="col-4 d-flex justify-content-end price">
-                            <h3>$<span id="itemValue">0.00</span></h3>
-
-                        </div><!--/col-4-->
-                    </div><!--/row-->
-                  </div>
-                  <!--/col-md-7-->
-                </div>
-                <!--/row-->
-              </div>
-              <!--/card-->
-            </div>
-            <!--/col-lg-8-->
-            <!-- right side  -->
-            <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
-                <div class="right_side p-3 shadow bg-light">
-                    <h2 class="mb-5">The total amount</h2>
-                    <div class="price_calc d-flex justify-content-between">
-                        <p>Product Name</p>
-                        <p>$<span id="showPrice">0.00</span></p>
-                    </div><!--/price_calc-->
-                    <div class="price_calc d-flex justify-content-between">
-                        <p>vat</p>
-                        <p>$<span id="vat">3.00</span></p>
-                    </div><!--/price_calc-->
-                    <hr/>
-                    <div class="totalAmount d-flex fw-bold justify-content-between">
-                        <p>The total amount : </p>
-                        <p>$<span id="total">0.00</span></p>
-                    </div><!--/totalAmount-->
-                    <button class="btn btn-info text-uppercase text-light fw-bold">Checkout</button>
-                </div><!--/right_side-->
-
-            </div><!--/col-lg-4-->
+      <section id="product-section" class="row row-cols-1">
+        <div class="col-lg-8">
+          <div class="row" id="productCard">
+              
           </div>
-          <!--/row-->
+      </div><!--/col-lg-8-->
+      <div class="col-lg-4">
+        <h2>Add Cart</h2>
+        <div class="card">
+          <div class="card-body">
+          <h4>Subtotal</h4>
+          </div>
         </div>
-        <!--/col-md-10-->
       </div>
-      <!--/row-->
+      </section><!--/product-section-->
     </div>
     <!--/container-fluid-->
     <script
@@ -162,6 +37,7 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <script src="products.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
